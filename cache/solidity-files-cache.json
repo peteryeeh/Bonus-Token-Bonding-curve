@@ -1,8 +1,450 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/Users/peter/traderdao-crowdsale/contracts/crowdsale/Crowdsale.sol": {
-      "lastModificationDate": 1648176017508,
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/contracts/BancorFormula.sol": {
+      "lastModificationDate": 1648216190613,
+      "contentHash": "a07a23e6dc2a523e39d8d426819af92c",
+      "sourceName": "contracts/BancorFormula.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "openzeppelin-solidity/contracts/utils/math/SafeMath.sol",
+        "./Math/Power.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "BancorFormula"
+      ]
+    },
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/node_modules/openzeppelin-solidity/contracts/utils/math/SafeMath.sol": {
+      "lastModificationDate": 1648214301953,
+      "contentHash": "a6a9d6c1f662e922b82c1ba4d81cdd48",
+      "sourceName": "openzeppelin-solidity/contracts/utils/math/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SafeMath"
+      ]
+    },
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/contracts/Math/Power.sol": {
+      "lastModificationDate": 1648216255762,
+      "contentHash": "6c687796d5e5bb51fca1a60193c53ff9",
+      "sourceName": "contracts/Math/Power.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Power"
+      ]
+    },
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/contracts/CurveBondedToken.sol": {
+      "lastModificationDate": 1648216181589,
+      "contentHash": "8103624629e684dbe2485bb2ae1eaaf5",
+      "sourceName": "contracts/CurveBondedToken.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol",
+        "openzeppelin-solidity/contracts/access/Ownable.sol",
+        "openzeppelin-solidity/contracts/utils/math/SafeMath.sol",
+        "./Interface/IBondingCurve.sol",
+        "./BancorFormula.sol",
+        "./MaxGasPrice.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "CurveBondedToken"
+      ]
+    },
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20.sol": {
+      "lastModificationDate": 1648214301337,
+      "contentHash": "bab063ddd80e9cc9e313361fef7ef07f",
+      "sourceName": "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol",
+        "./extensions/IERC20Metadata.sol",
+        "../../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/node_modules/openzeppelin-solidity/contracts/access/Ownable.sol": {
+      "lastModificationDate": 1648214301905,
+      "contentHash": "8398972af73b4e9e5ff3b31cad86234f",
+      "sourceName": "openzeppelin-solidity/contracts/access/Ownable.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/contracts/Interface/IBondingCurve.sol": {
+      "lastModificationDate": 1648215830895,
+      "contentHash": "5aa294bb44cfebd568f0aabd83eac573",
+      "sourceName": "contracts/Interface/IBondingCurve.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IBondingCurve"
+      ]
+    },
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/contracts/MaxGasPrice.sol": {
+      "lastModificationDate": 1648214834313,
+      "contentHash": "293bd9bf2023d3a66fbf9fa3fbe6ecca",
+      "sourceName": "contracts/MaxGasPrice.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "openzeppelin-solidity/contracts/access/Ownable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "MaxGasPrice"
+      ]
+    },
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/node_modules/openzeppelin-solidity/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1648214301821,
+      "contentHash": "a44d1a099633876550ad2476b21bafbe",
+      "sourceName": "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/node_modules/openzeppelin-solidity/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+      "lastModificationDate": 1648214301825,
+      "contentHash": "909ab67fc5c25033fe6cd364f8c056f9",
+      "sourceName": "openzeppelin-solidity/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20Metadata"
+      ]
+    },
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/node_modules/openzeppelin-solidity/contracts/utils/Context.sol": {
+      "lastModificationDate": 1648214300613,
+      "contentHash": "5f2c5c4b6af2dd4551027144797bc8be",
+      "sourceName": "openzeppelin-solidity/contracts/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/contracts/SimpleCBT.sol": {
+      "lastModificationDate": 1648216322499,
+      "contentHash": "7f91664c4d3e9ae92193d52c566f683b",
+      "sourceName": "contracts/SimpleCBT.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./CurveBondedToken.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SimpleCBT"
+      ]
+    },
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/contracts/crowdsale/Crowdsale.sol": {
+      "lastModificationDate": 1648214237149,
       "contentHash": "25852311b79632cf685058d235bc571d",
       "sourceName": "contracts/crowdsale/Crowdsale.sol",
       "solcConfig": {
@@ -40,8 +482,8 @@
         "Crowdsale"
       ]
     },
-    "/Users/peter/traderdao-crowdsale/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
-      "lastModificationDate": 1648176478976,
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
+      "lastModificationDate": 1648214301953,
       "contentHash": "bab063ddd80e9cc9e313361fef7ef07f",
       "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
       "solcConfig": {
@@ -79,8 +521,8 @@
         "ERC20"
       ]
     },
-    "/Users/peter/traderdao-crowdsale/node_modules/@openzeppelin/contracts/utils/math/SafeMath.sol": {
-      "lastModificationDate": 1648176480885,
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/node_modules/@openzeppelin/contracts/utils/math/SafeMath.sol": {
+      "lastModificationDate": 1648214302413,
       "contentHash": "a6a9d6c1f662e922b82c1ba4d81cdd48",
       "sourceName": "@openzeppelin/contracts/utils/math/SafeMath.sol",
       "solcConfig": {
@@ -114,8 +556,8 @@
         "SafeMath"
       ]
     },
-    "/Users/peter/traderdao-crowdsale/node_modules/@openzeppelin/contracts/utils/Strings.sol": {
-      "lastModificationDate": 1648176480944,
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/node_modules/@openzeppelin/contracts/utils/Strings.sol": {
+      "lastModificationDate": 1648214302417,
       "contentHash": "9c54c6c065d9e590fdcdd72c451425b9",
       "sourceName": "@openzeppelin/contracts/utils/Strings.sol",
       "solcConfig": {
@@ -149,8 +591,8 @@
         "Strings"
       ]
     },
-    "/Users/peter/traderdao-crowdsale/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
-      "lastModificationDate": 1648176480389,
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1648214302237,
       "contentHash": "a44d1a099633876550ad2476b21bafbe",
       "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
       "solcConfig": {
@@ -184,8 +626,8 @@
         "IERC20"
       ]
     },
-    "/Users/peter/traderdao-crowdsale/node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
-      "lastModificationDate": 1648176480402,
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+      "lastModificationDate": 1648214302241,
       "contentHash": "909ab67fc5c25033fe6cd364f8c056f9",
       "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
       "solcConfig": {
@@ -221,8 +663,8 @@
         "IERC20Metadata"
       ]
     },
-    "/Users/peter/traderdao-crowdsale/node_modules/@openzeppelin/contracts/utils/Context.sol": {
-      "lastModificationDate": 1648176478528,
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/node_modules/@openzeppelin/contracts/utils/Context.sol": {
+      "lastModificationDate": 1648214301841,
       "contentHash": "5f2c5c4b6af2dd4551027144797bc8be",
       "sourceName": "@openzeppelin/contracts/utils/Context.sol",
       "solcConfig": {
@@ -256,8 +698,8 @@
         "Context"
       ]
     },
-    "/Users/peter/traderdao-crowdsale/contracts/crowdsale/validation/WhitelistedCrowdsale.sol": {
-      "lastModificationDate": 1648176017510,
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/contracts/crowdsale/validation/WhitelistedCrowdsale.sol": {
+      "lastModificationDate": 1648214237149,
       "contentHash": "40488fef61dd0904857cc2e51f4d1714",
       "sourceName": "contracts/crowdsale/validation/WhitelistedCrowdsale.sol",
       "solcConfig": {
@@ -294,8 +736,8 @@
         "WhitelistedCrowdsale"
       ]
     },
-    "/Users/peter/traderdao-crowdsale/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
-      "lastModificationDate": 1648176480723,
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
+      "lastModificationDate": 1648214302369,
       "contentHash": "8398972af73b4e9e5ff3b31cad86234f",
       "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
       "solcConfig": {
@@ -331,8 +773,8 @@
         "Ownable"
       ]
     },
-    "/Users/peter/traderdao-crowdsale/contracts/crowdsale/emission/AllowanceCrowdsale.sol": {
-      "lastModificationDate": 1648176017509,
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/contracts/crowdsale/emission/AllowanceCrowdsale.sol": {
+      "lastModificationDate": 1648214237149,
       "contentHash": "1128cd97409e8bcffef6c2a7a40cb020",
       "sourceName": "contracts/crowdsale/emission/AllowanceCrowdsale.sol",
       "solcConfig": {
@@ -370,8 +812,8 @@
         "AllowanceCrowdsale"
       ]
     },
-    "/Users/peter/traderdao-crowdsale/contracts/crowdsale/validation/FixedAmountCrowdsale.sol": {
-      "lastModificationDate": 1648176017510,
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/contracts/crowdsale/validation/FixedAmountCrowdsale.sol": {
+      "lastModificationDate": 1648214237149,
       "contentHash": "33e9113ce88ee0470eec770a22353664",
       "sourceName": "contracts/crowdsale/validation/FixedAmountCrowdsale.sol",
       "solcConfig": {
@@ -408,8 +850,8 @@
         "FixedAmountCrowdsale"
       ]
     },
-    "/Users/peter/traderdao-crowdsale/contracts/crowdsale/validation/MaxAmountCrowdsale.sol": {
-      "lastModificationDate": 1648176017510,
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/contracts/crowdsale/validation/MaxAmountCrowdsale.sol": {
+      "lastModificationDate": 1648214237149,
       "contentHash": "346f244050e7f18c838d70cd2e32ab5a",
       "sourceName": "contracts/crowdsale/validation/MaxAmountCrowdsale.sol",
       "solcConfig": {
@@ -446,8 +888,8 @@
         "MaxAmountCrowdsale"
       ]
     },
-    "/Users/peter/traderdao-crowdsale/contracts/crowdsale/validation/CappedTimedMaxAmountCrowdsale.sol": {
-      "lastModificationDate": 1648176017509,
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/contracts/crowdsale/validation/CappedTimedMaxAmountCrowdsale.sol": {
+      "lastModificationDate": 1648214237149,
       "contentHash": "7f276461a086daf88bd5a16cbab7b810",
       "sourceName": "contracts/crowdsale/validation/CappedTimedMaxAmountCrowdsale.sol",
       "solcConfig": {
@@ -485,8 +927,8 @@
         "CappedTimedMaxAmountCrowdsale"
       ]
     },
-    "/Users/peter/traderdao-crowdsale/contracts/crowdsale/validation/CappedTimedCrowdsale.sol": {
-      "lastModificationDate": 1648176017509,
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/contracts/crowdsale/validation/CappedTimedCrowdsale.sol": {
+      "lastModificationDate": 1648214237149,
       "contentHash": "f4c98e07e939961f54a0fe11af43d3f1",
       "sourceName": "contracts/crowdsale/validation/CappedTimedCrowdsale.sol",
       "solcConfig": {
@@ -523,8 +965,8 @@
         "CappedTimedCrowdsale"
       ]
     },
-    "/Users/peter/traderdao-crowdsale/contracts/crowdsale/validation/CappedCrowdsale.sol": {
-      "lastModificationDate": 1648176017509,
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/contracts/crowdsale/validation/CappedCrowdsale.sol": {
+      "lastModificationDate": 1648214237149,
       "contentHash": "0daf66c4f7fa9dd23a6f95b1db012075",
       "sourceName": "contracts/crowdsale/validation/CappedCrowdsale.sol",
       "solcConfig": {
@@ -561,8 +1003,8 @@
         "CappedCrowdsale"
       ]
     },
-    "/Users/peter/traderdao-crowdsale/contracts/crowdsale/distrbution/PostDeliveryCrowdsale.sol": {
-      "lastModificationDate": 1648176017509,
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/contracts/crowdsale/distrbution/PostDeliveryCrowdsale.sol": {
+      "lastModificationDate": 1648214237149,
       "contentHash": "1d64baefd3e56fcfb3919d897e6860e5",
       "sourceName": "contracts/crowdsale/distrbution/PostDeliveryCrowdsale.sol",
       "solcConfig": {
@@ -599,8 +1041,8 @@
         "PostDeliveryCrowdsale"
       ]
     },
-    "/Users/peter/traderdao-crowdsale/contracts/crowdsale/validation/TimedCrowdsale.sol": {
-      "lastModificationDate": 1648176017510,
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/contracts/crowdsale/validation/TimedCrowdsale.sol": {
+      "lastModificationDate": 1648214237149,
       "contentHash": "0d4f9e9e3a7f56687b37a18812636321",
       "sourceName": "contracts/crowdsale/validation/TimedCrowdsale.sol",
       "solcConfig": {
@@ -637,8 +1079,8 @@
         "TimedCrowdsale"
       ]
     },
-    "/Users/peter/traderdao-crowdsale/contracts/crowdsale/distrbution/FinalizableCrowdsale.sol": {
-      "lastModificationDate": 1648176017509,
+    "/home/fatfingererr/Bonus-Token-Bonding-curve/contracts/crowdsale/distrbution/FinalizableCrowdsale.sol": {
+      "lastModificationDate": 1648214237149,
       "contentHash": "b1ff0a76056ab22a4cf366f8794211ba",
       "sourceName": "contracts/crowdsale/distrbution/FinalizableCrowdsale.sol",
       "solcConfig": {

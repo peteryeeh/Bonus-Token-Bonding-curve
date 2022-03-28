@@ -1,3 +1,4 @@
+//SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 import "./CurveBondedToken.sol";
@@ -8,19 +9,19 @@ import "./CurveBondedToken.sol";
  *      Uses Ether as the reserve currency.
  */
 contract SimpleCBT is CurveBondedToken {
-
     fallback() external payable {
-       mint();
-    }
-
-    receive() external payable {
-      mint();
-    }
-    function() public payable {
         mint();
     }
 
-    constructor(uint256 _reserveRatio) public CurveBondedToken(_reserveRatio) {}
+    receive() external payable {
+        mint();
+    }
+
+    constructor(
+        string memory _name,
+        string memory _symbol,
+        uint256 _reserveRatio
+    ) CurveBondedToken(_name, _symbol, _reserveRatio) {}
 
     function mint() public payable {
         require(msg.value > 0, "Must send ether to buy tokens.");
@@ -29,6 +30,6 @@ contract SimpleCBT is CurveBondedToken {
 
     function burn(uint256 _amount) public {
         uint256 returnAmount = _curvedBurn(_amount);
-        msg.sender.transfer(returnAmount);
+        payable(msg.sender).transfer(returnAmount);
     }
 }
