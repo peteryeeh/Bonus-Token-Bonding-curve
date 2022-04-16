@@ -70,7 +70,8 @@ contract Crowdsale is CurveBondedToken{
         _preValidatePurchase(_beneficiary, weiAmount);
 
         // calculate token amount to be created
-        uint256 tokens = _getTokenAmount(weiAmount);
+        uint256 tokens = _caculateBuyingTokenAmount(weiAmount);
+        // uint256 tokens = _getBuyingTokenAmount(weiAmount);
         emit DebugUint256(
             "Number/token.balanceOf",
             token.balanceOf(address(this)),
@@ -90,9 +91,15 @@ contract Crowdsale is CurveBondedToken{
         emit TokenPurchase(msg.sender, _beneficiary, weiAmount, tokens);
 
         // _updatePurchasingState(_beneficiary, weiAmount);
-
-        _forwardFunds();
+        uint256 forwardFunds = msg.value.div(2);
+        _forwardFunds(forwardFunds);
         // _postValidatePurchase(_beneficiary, weiAmount);
+    }
+
+    function sellTokens(uint256 tokenAmount) public {
+        uint256 reimbursement = _caculatreimbursementAmount(tokenAmount);
+        address receiver = msg.sender;
+        payable(receiver).transfer(reimbursement);
     }
 
     // -----------------------------------------
@@ -104,13 +111,13 @@ contract Crowdsale is CurveBondedToken{
      * @param _weiAmount Value in wei to be converted into tokens
      * @return Number of tokens that can be purchased with the specified _weiAmount
      */
-    function _getTokenAmount(uint256 _weiAmount)
-        internal
-        // view
-        returns (uint256)
-    {
-        return _caculateAmount(_weiAmount);
-    }
+    // function _getBuyingTokenAmount(uint256 _weiAmount)
+    //     internal
+    //     // view
+    //     returns (uint256)
+    // {
+    //     return _caculateBuyingAmount(_weiAmount);
+    // }
 
     /**
      * @dev Validation of an incoming purchase. Use require statements to revert state when conditions are not met. Use super to concatenate validations.
@@ -180,7 +187,7 @@ contract Crowdsale is CurveBondedToken{
     /**
      * @dev Determines how ETH is stored/forwarded on purchases.
      */
-    function _forwardFunds() internal {
-        payable(wallet).transfer(msg.value);
+    function _forwardFunds(uint256 forwardValue) internal {
+        payable(wallet).transfer(forwardValue);
     }
 }

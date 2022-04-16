@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/Users/peter/Bonus-Token-Bonding-curve/contracts/crowdsale/BancorFormula.sol": {
-      "lastModificationDate": 1648728981755,
-      "contentHash": "658b68b7013dac1b3737996fc7362879",
+      "lastModificationDate": 1649930644199,
+      "contentHash": "32aac51f9f4fa846f762e4b5e4f6c18f",
       "sourceName": "contracts/crowdsale/BancorFormula.sol",
       "solcConfig": {
         "version": "0.8.0",
@@ -110,8 +110,8 @@
       ]
     },
     "/Users/peter/Bonus-Token-Bonding-curve/contracts/crowdsale/CurveBondedToken.sol": {
-      "lastModificationDate": 1648818928124,
-      "contentHash": "9c793f2268ac1e20529904200db9b4b5",
+      "lastModificationDate": 1649951429244,
+      "contentHash": "698271a22b9933b6d805da9b99a73732",
       "sourceName": "contracts/crowdsale/CurveBondedToken.sol",
       "solcConfig": {
         "version": "0.8.0",
@@ -138,8 +138,10 @@
       },
       "imports": [
         "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol",
+        "openzeppelin-solidity/contracts/access/Ownable.sol",
         "openzeppelin-solidity/contracts/utils/math/SafeMath.sol",
-        "./BancorFormula.sol"
+        "./BancorFormula.sol",
+        "./MaxGasPrice.sol"
       ],
       "versionPragmas": [
         "^0.8.0"
@@ -369,8 +371,8 @@
       ]
     },
     "/Users/peter/Bonus-Token-Bonding-curve/contracts/crowdsale/Crowdsale.sol": {
-      "lastModificationDate": 1648806212281,
-      "contentHash": "90a69abc81636e3a8001854f11f2b28c",
+      "lastModificationDate": 1649952205443,
+      "contentHash": "c1252395e4dcecdbab2561fcf13c1ee0",
       "sourceName": "contracts/crowdsale/Crowdsale.sol",
       "solcConfig": {
         "version": "0.8.0",
@@ -406,8 +408,8 @@
       ]
     },
     "/Users/peter/Bonus-Token-Bonding-curve/contracts/crowdsale/Power.sol": {
-      "lastModificationDate": 1648728979126,
-      "contentHash": "db0e9c4105338ea113015e431d2c07d2",
+      "lastModificationDate": 1649930647901,
+      "contentHash": "a6ffd47574a6e7c9f24ac8da03937926",
       "sourceName": "contracts/crowdsale/Power.sol",
       "solcConfig": {
         "version": "0.8.0",

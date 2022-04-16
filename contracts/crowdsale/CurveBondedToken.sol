@@ -4,15 +4,14 @@ pragma solidity ^0.8.0;
 // https://github.com/OpenZeppelin/
 
 import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
-// import "openzeppelin-solidity/contracts/access/Ownable.sol";
+import "openzeppelin-solidity/contracts/access/Ownable.sol";
 import "openzeppelin-solidity/contracts/utils/math/SafeMath.sol";
 
 // import "./Interface/IBondingCurve.sol";
 import "./BancorFormula.sol";
-// import "./MaxGasPrice.sol";
+import "./MaxGasPrice.sol";
 
-contract CurveBondedToken is BancorFormula{
-    // , Ownable, MaxGasPrice
+contract CurveBondedToken is BancorFormula, Ownable, MaxGasPrice{
     using SafeMath for uint256;
 
     uint256 public scale = 10**18;
@@ -25,7 +24,7 @@ contract CurveBondedToken is BancorFormula{
         // emit CurveBondedToken("CurveBondedToken Constructed",reserveRatio);
     }
 
-    function calculateBuyAmount(uint256 _amount)
+    function calculateBuyAmountByBancor(uint256 _amount)
         public
         view
         // override
@@ -40,7 +39,7 @@ contract CurveBondedToken is BancorFormula{
             );
     }
 
-    function calculateCurvedBurnReturn(uint256 _amount)
+    function calculateReimbursementByBancor(uint256 _amount)
         public
         view
         // override
@@ -48,7 +47,7 @@ contract CurveBondedToken is BancorFormula{
     {
         return  
             calculateSaleReturn(
-                totalSupply(),
+                bonosTokenCirculation,
                 poolBalance,
                 uint32(reserveRatio),
                 _amount
@@ -60,22 +59,22 @@ contract CurveBondedToken is BancorFormula{
         _;
     }
 
-    modifier validBurn(uint256 _amount) {
-        require(_amount > 0, "Amount must be non-zero!");
-        require(
-            balanceOf(msg.sender) >= _amount,
-            "Sender does not have enough tokens to burn."
-        );
-        _;
-    }
+    // modifier validBurn(uint256 _amount) {
+    //     require(_amount > 0, "Amount must be non-zero!");
+    //     require(
+    //         balanceOf(msg.sender) >= _amount,
+    //         "Sender does not have enough tokens to burn."
+    //     );
+    //     _;
+    // }
 
-    function _caculateAmount(uint256 _deposit)
+    function _caculateBuyingTokenAmount(uint256 _deposit)
         internal
         // validGasPrice
         // validMint(_deposit)
         returns (uint256)
     {
-        uint256 amount = calculateBuyAmount(_deposit);
+        uint256 amount = calculateBuyAmountByBancor(_deposit);
         // _mint(msg.sender, amount);
         bonosTokenCirculation = bonosTokenCirculation.add(amount);
         poolBalance = poolBalance.add(_deposit);
@@ -83,16 +82,16 @@ contract CurveBondedToken is BancorFormula{
         return amount;
     }
 
-    function _caculatBurn(uint256 _amount)
+    function _caculatreimbursementAmount(uint256 _amount)
         internal
         // validGasPrice
-        validBurn(_amount)
+        // validBurn(_amount)
         returns (uint256)
     {
-        uint256 reimbursement = calculateCurvedBurnReturn(_amount);
+        uint256 reimbursement = calculateReimbursementByBancor(_amount);
         poolBalance = poolBalance.sub(reimbursement);
-        _burn(msg.sender, _amount);
-        emit CurvedBurn(msg.sender, _amount, reimbursement);
+        // _burn(msg.sender, _amount);
+        // emit CurvedBurn(msg.sender, _amount, reimbursement);
         return reimbursement;
     }
 }
